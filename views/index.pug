@@ -1,5 +1,52 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+	
+	div.container#main-wrapper
+		div.row
+			if(msg= updated)
+				div(class="text-center updated")
+					h3= msg
+
+			if(msg= deleted)
+				div(class="text-center deleted")
+					h3= msg
+
+			if(msg= added)
+				div(class="text-center added")
+					h3= msg
+
+			h1= title
+			h2 Welcome back! 
+			form(class="form-inline" action="/addNew" method="post")
+				div.form-group
+					label.sr-only New Task
+					div.input-group
+						input(type="text" class="form-control" placeholder="New Task" name="newTaskString")
+					div.input-group
+						input(type="text" class="form-control" placeholder="Task Date Deadline" name="newTaskDate")
+				button(type="submit" class="btn btn-primary") Add New Task
+
+			div.row
+				table.table
+					
+					-
+					if (taskArray.length === 0)
+						tr
+							td Your list is empty. Add something!
+					else
+						each task, index in taskArray
+							tr
+								td= task.task_name
+								td= task.task_date
+								td
+									a(href="/edit/"+task.id+"")
+										button(class="btn btn btn-warning") Edit
+								td
+									a(href="/confirm-delete/"+task.id+"")
+										button(class="btn btn btn-danger delete-button") Delete
+
+
+
+
+

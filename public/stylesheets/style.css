@@ -1,8 +1,54 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #ddd;
 }
 
 a {
   color: #00B7FF;
+}
+
+.updated{
+	opacity: 0;
+	padding: 1px 8px 6px 8px;
+	border-radius: 5px;
+	line-height: 24px;
+	width: 20%;
+	margin: auto;
+	color: white;
+	background-color: green;
+	transition: all 2s;
+	animation: fade 2s;
+}
+
+.added{
+	opacity: 0;
+	padding: 1px 8px 6px 8px;
+	border-radius: 5px;
+	line-height: 24px;
+	width: 20%;
+	margin: auto;
+	color: white;
+	background-color: green;
+	transition: all 2s;
+	animation: fade 2s;
+}
+
+.deleted{
+	opacity: 0;
+	padding: 1px 8px 6px 8px;
+	border-radius: 5px;
+	line-height: 24px;
+	width: 20%;
+	margin: auto;
+	color: white;
+	background-color: red;
+	transition: all 2s;
+	animation: fade 2s;
+}
+
+@keyframes fade {
+	0% {opacity: 0}
+	10%{opacity: 1}
+	100%{opacity: 0}
 }

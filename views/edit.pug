@@ -1,0 +1,21 @@
+extends layout
+
+block content
+	div.container#main-wrapper
+		div.row
+			h1= title
+			h2 Edit the below task 
+			form(class="form-inline" action="/edit/"+task.id+"" method="post")
+				div.form-group
+					label.sr-only New Task
+					div.input-group
+						input(type="text" class="form-control" placeholder="New Task" name="newTaskString" value=""+task.task_name+"")
+					div.input-group
+						input(type="text" class="form-control" placeholder="Task Date Deadline" name="newTaskDate" value=""+task.task_date+"")
+				button(type="submit" class="btn btn-primary") Update Task
+
+
+
+
+
+
