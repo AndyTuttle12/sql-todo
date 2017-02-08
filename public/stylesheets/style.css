@@ -8,43 +8,23 @@ a {
   color: #00B7FF;
 }
 
-.updated{
+.updated, .added, .deleted{
+	box-sizing:border-box;
 	opacity: 0;
 	padding: 1px 8px 6px 8px;
 	border-radius: 5px;
 	line-height: 24px;
-	width: 20%;
+	width: 200px;
 	margin: auto;
 	color: white;
-	background-color: green;
 	transition: all 2s;
 	animation: fade 2s;
 }
-
-.added{
-	opacity: 0;
-	padding: 1px 8px 6px 8px;
-	border-radius: 5px;
-	line-height: 24px;
-	width: 20%;
-	margin: auto;
-	color: white;
+.added, .updated{
 	background-color: green;
-	transition: all 2s;
-	animation: fade 2s;
 }
-
 .deleted{
-	opacity: 0;
-	padding: 1px 8px 6px 8px;
-	border-radius: 5px;
-	line-height: 24px;
-	width: 20%;
-	margin: auto;
-	color: white;
 	background-color: red;
-	transition: all 2s;
-	animation: fade 2s;
 }
 
 @keyframes fade {

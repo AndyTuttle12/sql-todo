@@ -4,18 +4,20 @@ block content
 	
 	div.container#main-wrapper
 		div.row
-			-
-			if(msg= updated)
-				div(class="text-center updated")
-					h3= msg
-
-			if(msg= deleted)
-				div(class="text-center deleted")
-					h3= msg
-
-			if(msg= added)
-				div(class="text-center added")
-					h3= msg
+			- var checkmsg = msg
+			case checkmsg
+				when "Added task!"
+					div.added.text-center
+						h3= msg
+				when "Updated task!"
+					div.updated.text-center
+						h3= msg
+				when "Deleted task!"
+					div.deleted.text-center
+						h3= msg
+				default
+					div.text-center
+						h3= msg
 
 			h1= title
 			h2 Welcome back! 

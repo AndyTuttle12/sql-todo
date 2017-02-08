@@ -22,6 +22,8 @@ router.get('/', function(req, res, next) {
 		msg = "Added task!";
 	}else if(msg === 'deleted'){
 		msg = "Deleted task!";
+	}else{
+		msg = "";
 	}
 	// res.send(msg);
 	connection.query(selectQuery, (error, results, fields)=> {
